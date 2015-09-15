@@ -1,4 +1,4 @@
-require "oj"
+require "gson"
 
 module FieldMapper
   module Marshaller
@@ -13,11 +13,11 @@ module FieldMapper
     }
 
     def marshal(value)
-      Oj.dump prep_value(value), OPTIONS
+      Gson::Encoder.new.encode prep_value(value), OPTIONS
     end
 
     def unmarshal(value)
-      Oj.load value, OPTIONS
+      Gson::Encoder.new.decode value, OPTIONS
     end
 
     private
