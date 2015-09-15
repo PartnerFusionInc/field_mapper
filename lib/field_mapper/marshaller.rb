@@ -13,11 +13,11 @@ module FieldMapper
     }
 
     def marshal(value)
-      Gson::Encoder.new.encode prep_value(value), OPTIONS
+      Gson::Encoder.new.encode prep_value(value) #, OPTIONS
     end
 
     def unmarshal(value)
-      Gson::Decoder.new.decode value, OPTIONS
+      Gson::Decoder.new.decode value #, OPTIONS
     end
 
     private
