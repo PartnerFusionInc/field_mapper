@@ -17,7 +17,7 @@ module FieldMapper
     end
 
     def unmarshal(value)
-      Gson::Encoder.new.decode value, OPTIONS
+      Gson::Decoder.new.decode value, OPTIONS
     end
 
     private
